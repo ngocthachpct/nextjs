@@ -1565,7 +1565,7 @@ button.bg-danger:hover {
 	position: absolute;
 	top: 10px;
 	width: 25px;
-	background: url(/right-arrow.png) no-repeat 0 0 / 14px 7px;
+	background: url(/assets/right-arrow.png) no-repeat 0 0 / 14px 7px;
 	height: 15px;
 }
 
@@ -1579,7 +1579,7 @@ button.bg-danger:hover {
 	position: absolute;
 	top: 10px;
 	width: 25px;
-	background: url(/down-arrow-green.png) no-repeat 0 0 / 14px 7px;
+	background: url(/assets/down-arrow-green.png) no-repeat 0 0 / 14px 7px;
 	height: 15px;
 }
 
@@ -1657,7 +1657,7 @@ button.bg-danger:hover {
 	position: absolute;
 	top: 10px;
 	width: 25px;
-	background: url(/arrow-down-orange.png) no-repeat 0 0 / 14px 7px;
+	background: url(/assets/arrow-down-orange.png) no-repeat 0 0 / 14px 7px;
 	height: 15px;
 }
 
@@ -1671,7 +1671,7 @@ button.bg-danger:hover {
 	position: absolute;
 	top: 10px;
 	width: 25px;
-	background: url(/arrow-down-orange.png) no-repeat 0 0 / 14px 7px;
+	background: url(/assets/arrow-down-orange.png) no-repeat 0 0 / 14px 7px;
 	height: 15px;
 }
 
@@ -1698,7 +1698,7 @@ button.bg-danger:hover {
 	position: absolute;
 	top: 10px;
 	width: 25px;
-	background: url(/dropdown.png) no-repeat 0 0 / 14px 7px;
+	background: url(/assets/dropdown.png) no-repeat 0 0 / 14px 7px;
 	height: 15px;
 }
 
@@ -1712,7 +1712,7 @@ button.bg-danger:hover {
 	position: absolute;
 	top: 10px;
 	width: 25px;
-	background: url(/dropdown.png) no-repeat 0 0 / 14px 7px;
+	background: url(/assets/dropdown.png) no-repeat 0 0 / 14px 7px;
 	height: 15px;
 }
 
@@ -4825,7 +4825,7 @@ span.leave-inactive {
 }
 
 .dash-activity h3 {
-	background: #F9FAFB url(/headmap.png) no-repeat 100%;
+	background: #F9FAFB url(/assets/headmap.png) no-repeat 100%;
 	padding: 30px 20px;
 	font-size: 18px;
 	font-weight: 600;
@@ -4841,7 +4841,7 @@ span.leave-inactive {
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	align-items: center;
-	background: url(/right-icon.png) no-repeat 96% 50%;
+	background: url(/assets/right-icon.png) no-repeat 96% 50%;
 }
 
 .leave-viewall.activit {
@@ -4853,7 +4853,7 @@ span.leave-inactive {
 }
 
 .activity-set:hover {
-	background: #f5f5f5 url(/right-icon.png) no-repeat 96% 50%;
+	background: #f5f5f5 url(/assets/right-icon.png) no-repeat 96% 50%;
 }
 
 .activity-content {
