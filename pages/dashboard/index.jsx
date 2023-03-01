@@ -18,7 +18,7 @@ export default function Dashboard (){
                     <label>Sun, 29 Nov 2019</label>
                 </div>
                 <div className="row mb-4">
-                    <div className="col-xl-6 col-sm-12 col-12">
+                    <div className="col-xl-12 col-sm-12 col-12">
                         <div className="breadcrumb-path ">
                             <ul className="breadcrumb">
                                 <li className="breadcrumb-item"><a href="index.html"><img src="assets/dash.png" className="mr-3" alt="breadcrumb" />Home</a>
@@ -28,16 +28,7 @@ export default function Dashboard (){
                             <h3>Admin Dashboard</h3>
                         </div>
                     </div>
-                    <div className="col-xl-6 col-sm-12 col-12">
-                        <div className="row">
-                            <div className="col-xl-6 col-sm-6 col-12">
-                                <a className="btn-dash" href="#"> Admin Dashboard</a>
-                            </div>
-                            <div className="col-xl-6 col-sm-6 col-12">
-                                <a className="btn-emp" href="index-employee.html">Employee Dashboard</a>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div className="row mb-4">
                     <div className="col-xl-3 col-sm-6 col-12">
@@ -62,6 +53,19 @@ export default function Dashboard (){
                                 </div>
                                 <div className="card_widget_img">
                                     <img src="assets/dash2.png" alt="card-img" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-xl-3 col-sm-6 col-12">
+                        <div className="card board1 fill3 ">
+                            <div className="card-body">
+                                <div className="card_widget_header">
+                                    <label>Companies</label>
+                                    <h4>10</h4>
+                                </div>
+                                <div className="card_widget_img">
+                                    <img src="assets/dash3.png" alt="card-img" />
                                 </div>
                             </div>
                         </div>

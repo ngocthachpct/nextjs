@@ -3159,7 +3159,7 @@ html.menu-opened body {
 .top-nav-search {
 	float: left;
 	margin-left: 15px;
-	width: 40%;
+	width: 100%;
 }
 
 .top-nav-search form {
@@ -7513,7 +7513,7 @@ label.logo-upload {
 	}
 
 	.top-nav-search {
-		display: none;
+		display: block;
 	}
 
 	.login-wrapper .loginbox .login-left {

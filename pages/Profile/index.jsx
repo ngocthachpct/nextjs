@@ -41,23 +41,12 @@ export default function Profile (){
                 </a>
               </li>
               <li>
-                <a href="profile-detail.html">Detail</a>
+                <a href="ProfileDetail">Detail</a>
               </li>
               <li>
-                <a href="profile-document.html">Document</a>
+                <a href="ProfileSetting">Settings</a>
               </li>
-              <li>
-                <a href="profile-payroll.html">Payroll</a>
-              </li>
-              <li>
-                <a href="profile-timeoff.html">Timeoff</a>
-              </li>
-              <li>
-                <a href="profile-review.html">Reviews</a>
-              </li>
-              <li>
-                <a href="profile-setting.html">Settings</a>
-              </li>
+              
             </ul>
           </div>
         </div>

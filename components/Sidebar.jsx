@@ -1,6 +1,11 @@
 import React from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+
 
 function Sidebar (){
+  const router = useRouter();
+
     return (
   
         <div className="sidebar" id="sidebar">
@@ -37,38 +42,27 @@ function Sidebar (){
                         Employees</span></a>
                   </li>
                   <li>
+                    <a href="Company"><img src="assets/leave.svg" alt="sidebar_img" /> <span>
+                        Companies</span></a>
+                  </li>
+                  <li>
                     <a href="Department"><img src="assets/company.svg" alt="sidebar_img" /> <span>
                         Departments</span></a>
                   </li>
+                  
+                  
+                  
+                  
+                  
+                  
                   <li>
-                    <a href="calendar.html"><img src="assets/calendar.svg" alt="sidebar_img" />
-                      <span>Calendar</span></a>
-                  </li>
-                  <li>
-                    <a href="leave.html"><img src="assets/leave.svg" alt="sidebar_img" />
-                      <span>Leave</span></a>
-                  </li>
-                  <li>
-                    <a href="review.html"><img src="assets/review.svg" alt="sidebar_img" /><span>Review</span></a>
-                  </li>
-                  <li>
-                    <a href="report.html"><img src="assets/report.svg" alt="sidebar_img" /><span>Report</span></a>
-                  </li>
-                  <li>
-                    <a href="manage.html"><img src="assets/manage.svg" alt="sidebar_img" />
-                      <span>Manage</span></a>
-                  </li>
-                  <li>
-                    <a href="settings.html"><img src="assets/settings.svg" alt="sidebar_img" /><span>Settings</span></a>
-                  </li>
-                  <li>
-                    <a href="profile.html"><img src="assets/profile.svg" alt="sidebar_img" />
+                    <a href="Profile"><img src="assets/profile.svg" alt="sidebar_img" />
                       <span>Profile</span></a>
                   </li>
                 </ul>
                 <ul className="logout">
                   <li>
-                    <a href="profile.html"><img src="assets/logout.svg" alt="sidebar_img" /><span>Log
+                    <a href="/"><img src="assets/logout.svg" alt="sidebar_img" /><span>Log
                         out</span></a>
                   </li>
                 </ul>

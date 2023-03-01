@@ -1,6 +1,7 @@
 
 import Header from './../../components/Header';
 import Sidebar from './../../components/Sidebar';
+import Searchbar from './../../components/Searchbar';
 import * as Icon from 'react-feather';
 
 export default function Department (){
@@ -25,65 +26,34 @@ export default function Department (){
                   Home
                 </a>
               </li>
-              <li className="breadcrumb-item active"> Employees</li>
+              <li className="breadcrumb-item active"> Departments</li>
             </ul>
-            <h3>Employees</h3>
+            <h3>Departments</h3>
           </div>
         </div>
         <div className="col-xl-12 col-sm-12 col-12 mb-4">
           <div className="head-link-set">
-            <ul>
-              <li>
-                <a href="Employee">Employees</a>
-              </li>
-              <li>
-                <a className="active" href="#">
-                  Departments
-                </a>
-              </li>
-            </ul>
-            <a className="btn-add" href="add-employee.html">
-              <Icon.Plus /> Add Person
-            </a>
-          </div>
-        </div>
-      </div>
-      <div className="row mb-3">
-        <div className="col-xl-10 col-sm-8 col-12 ">
-          <label className="employee_count">1 Departments</label>
-        </div>
-        
-      </div>
-      <div className="row">
-        <div className="col-xl-12 col-sm-12 col-12 ">
-          <div className="card  card-lists">
-            <div className="card-header  ">
-              <h2 className="card-titles">Create New Office</h2>
-            </div>
-            <div className="card-body">
-              <div className="row">
-                <div className="col-xl-8 col-sm-12 col-12 ">
-                  <input
-                    type="text"
-                    placeholder="Office Name"
-                    className="input-form"
-                  />
-                </div>
-                <div className="col-xl-2 col-sm-6 col-6 ">
+            <Searchbar />
+            {/* <div className="col-xl-2 col-sm-6 col-6 ">
                   <a href="#" className="btn-create ">
-                    Create Office{" "}
+                  Add Person{" "}
                   </a>
-                </div>
-                <div className="col-xl-2 col-sm-6 col-6 ">
-                  <a href="#" className="btn-cancel ">
-                    Cancel{" "}
-                  </a>
-                </div>
-              </div>
-            </div>
+                </div> */}
           </div>
         </div>
+      <div className="col-xl-12 col-sm-12 col-12 mb-4">
+        <div className="row">
+          <div className="col-xl-10 col-sm-8 col-12">
+            <label className="employee_count">7 Departments</label>
+          </div>
+          <div class="col-xl-1 col-sm-2 col-12 ">
+<a href="#" class="btn-create "><Icon.Plus /> </a>
+</div>
+        </div>
       </div>
+      </div>
+      
+      
       <div className="row">
         <div className="col-xl-12 col-sm-12 col-12 ">
           <div className="card">
@@ -165,6 +135,7 @@ export default function Department (){
                       <th>Team</th>
                       <th>Office</th>
                       <th>Permissions</th>
+                      <th>Action</th>
                       
                     </tr>
                   </thead>
@@ -194,6 +165,12 @@ export default function Department (){
                       <td>
                         <label>Team Lead</label>
                       </td>
+                      <td className="tab-select">
+                    <select className="select">
+                      <option value="active">Update</option>
+                      <option value="inactive">Delete</option>
+                    </select>
+                  </td>
                       
                     </tr>
                     <tr>
@@ -221,6 +198,12 @@ export default function Department (){
                       <td>
                         <label>Team Lead</label>
                       </td>
+                      <td className="tab-select">
+                    <select className="select">
+                      <option value="active">Update</option>
+                      <option value="inactive">Delete</option>
+                    </select>
+                  </td>
                       
                     </tr>
                     <tr>
@@ -248,6 +231,12 @@ export default function Department (){
                       <td>
                         <label>Team Lead</label>
                       </td>
+                      <td className="tab-select">
+                    <select className="select">
+                      <option value="active">Update</option>
+                      <option value="inactive">Delete</option>
+                    </select>
+                  </td>
                       
                     </tr>
                     <tr>
@@ -275,6 +264,12 @@ export default function Department (){
                       <td>
                         <label>Team Lead</label>
                       </td>
+                      <td className="tab-select">
+                    <select className="select">
+                      <option value="active">Update</option>
+                      <option value="inactive">Delete</option>
+                    </select>
+                  </td>
                       
                     </tr>
                     <tr>
@@ -302,6 +297,12 @@ export default function Department (){
                       <td>
                         <label>Team Lead</label>
                       </td>
+                      <td className="tab-select">
+                    <select className="select">
+                      <option value="active">Update</option>
+                      <option value="inactive">Delete</option>
+                    </select>
+                  </td>
                       
                     </tr>
                     <tr>
@@ -329,6 +330,12 @@ export default function Department (){
                       <td>
                         <label>Team Lead</label>
                       </td>
+                      <td className="tab-select">
+                    <select className="select">
+                      <option value="active">Update</option>
+                      <option value="inactive">Delete</option>
+                    </select>
+                  </td>
                      
                     </tr>
                     <tr>
@@ -356,6 +363,12 @@ export default function Department (){
                       <td>
                         <label>Super Admin</label>
                       </td>
+                      <td className="tab-select">
+                    <select className="select">
+                      <option value="active">Update</option>
+                      <option value="inactive">Delete</option>
+                    </select>
+                  </td>
                       
                     </tr>
                   </tbody>

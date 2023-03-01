@@ -5,12 +5,22 @@ export default function ApplyJob() {
     return (
         <div className={style.container}>
             <div className={style.center}>
-                <h1>Apply CV</h1>
+                <h1>Job Application</h1>
                 <form method={style.post}>
                     <div className={style.txt_field}>
                         <input type="text" required />
                         <span />
-                        <label>Full Name</label>
+                        <label>First Name</label>
+                    </div>
+                    <div className={style.txt_field}>
+                        <input type="text" required />
+                        <span />
+                        <label>Last Name</label>
+                    </div>
+                    <div className={style.txt_field}>
+                        <input type="email" required />
+                        <span />
+                        <label>Email</label>
                     </div>
                     <div className={style.txt_field}>
                         <input type="date" required />
@@ -22,8 +32,8 @@ export default function ApplyJob() {
                         <span />
                         <label>Phone Number</label>
                     </div>
-                    <div>UPLOAD CV HERE</div>
-                    {/* <div className={style.pass}>Forgot Password?</div> */}
+                    <p>Upload CV</p>
+                    <input type="file" id="myFile" name="filename"></input>
                     <input className={style.Login} type="submit" value="Submit" />
 
                     <div className={style.signup_link}>
