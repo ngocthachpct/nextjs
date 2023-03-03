@@ -33,29 +33,24 @@ function Sidebar (){
                   </div>
                 </div>
                 <ul>
-                  <li className="active">
+                  <li className={router.pathname.split("?")[0].toLowerCase() == "/dashboard" ? "active" : "" }>
                     <a href="Dashboard"><img src="assets/home.svg" alt="sidebar_img" />
                       <span>Dashboard</span></a>
                   </li>
-                  <li>
+                  <li className={router.pathname.split("?")[0].toLowerCase() == "/employee" ? "active" : "" }>
                     <a href="Employee"><img src="assets/employee.svg" alt="sidebar_img" /><span>
                         Employees</span></a>
                   </li>
-                  <li>
+                  <li className={router.pathname.split("?")[0].toLowerCase() == "/company" ? "active" : "" }>
                     <a href="Company"><img src="assets/leave.svg" alt="sidebar_img" /> <span>
                         Companies</span></a>
                   </li>
-                  <li>
+                  <li className={router.pathname.split("?")[0].toLowerCase() == "/department" ? "active" : "" }>
                     <a href="Department"><img src="assets/company.svg" alt="sidebar_img" /> <span>
                         Departments</span></a>
                   </li>
                   
-                  
-                  
-                  
-                  
-                  
-                  <li>
+                  <li className={router.pathname.split("?")[0].toLowerCase() == "/profile" ? "active" : "" }>
                     <a href="Profile"><img src="assets/profile.svg" alt="sidebar_img" />
                       <span>Profile</span></a>
                   </li>
