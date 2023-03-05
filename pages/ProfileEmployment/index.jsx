@@ -35,7 +35,7 @@ export default function ProfileEmployment (){
             <ul>
               <li>
                 <a className="active" href="#">
-                  Employement
+                  Employment
                 </a>
               </li>
               <li>
@@ -45,13 +45,16 @@ export default function ProfileEmployment (){
               <li>
                 <a href="ProfileSetting">Settings</a>
               </li>
+              <li>
+                <a href="ProfileTimeoff">TimeOff</a>
+              </li>
             </ul>
           </div>
         </div>
         <div className="col-xl-12 col-sm-12 col-12 ">
           <div className="row">
             <div className="col-xl-6 col-sm-12 col-12 d-flex">
-              <div className="card flex-fill">
+              {/* <div className="card flex-fill">
                 <div className="card-header">
                   <h2 className="card-titles">
                     Add Maria Cotton to Another Team
@@ -71,7 +74,7 @@ export default function ProfileEmployment (){
                     </a>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="col-xl-6 col-sm-12 col-12 d-flex">
               <div className="card card-lists flex-fill">

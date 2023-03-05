@@ -7,8 +7,6 @@ import * as Icon from 'react-feather';
 export default function Employee (){
     return (
         <div>
-        <Header/>
-        <Sidebar/>
         <div className="page-wrapper">
   <div className="content container-fluid">
     <div className="row">
@@ -45,8 +43,8 @@ export default function Employee (){
           <div className="col-xl-10 col-sm-8 col-12">
             <label className="employee_count">7 People</label>
           </div>
-          <div class="col-xl-1 col-sm-2 col-12 ">
-<a href="#" class="btn-create "><Icon.Plus /> </a>
+          <div className="col-xl-1 col-sm-2 col-12 ">
+<a href="#" className="btn-create "><Icon.Plus /> </a>
 </div>
         </div>
       </div>

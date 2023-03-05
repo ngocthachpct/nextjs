@@ -46,6 +46,9 @@ export default function Profile (){
               <li>
                 <a href="ProfileSetting">Settings</a>
               </li>
+              <li>
+                <a href="ProfileTimeoff">TimeOff</a>
+              </li>
               
             </ul>
           </div>
@@ -53,7 +56,7 @@ export default function Profile (){
         <div className="col-xl-12 col-sm-12 col-12 ">
           <div className="row">
             <div className="col-xl-6 col-sm-12 col-12 d-flex">
-              <div className="card flex-fill">
+              {/* <div className="card flex-fill">
                 <div className="card-header">
                   <h2 className="card-titles">
                     Add Maria Cotton to Another Team
@@ -73,12 +76,13 @@ export default function Profile (){
                     </a>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
-            <div className="col-xl-6 col-sm-12 col-12 d-flex">
+            <div className="col-xl-12 col-sm-12 col-12 ">
               <div className="card card-lists flex-fill">
                 <div className="card-header">
-                  <h2 className="card-titles">PHP Team</h2>
+                  <h2 className="card-titles">Check Attendance
+                  <span>You have just checked your attendace at 12:35pm (on time)</span></h2>
                   <ul>
                     <li>
                       <a
@@ -86,10 +90,10 @@ export default function Profile (){
                         data-toggle="modal"
                         data-target="#edit_working"
                       >
-                        <Icon.Edit />
+                        <Icon.CheckCircle />
                       </a>
                     </li>
-                    <li>
+                    {/* <li>
                       <a
                         className="delete-link"
                         data-toggle="modal"
@@ -97,7 +101,7 @@ export default function Profile (){
                       >
                         <Icon.Trash2 />
                       </a>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
                 <div className="card-body d-flex align-items-center">
@@ -109,7 +113,9 @@ export default function Profile (){
                     />
                     <label>Maria Cotton</label>
                   </div>
+                  
                 </div>
+                
               </div>
             </div>
           </div>
@@ -218,15 +224,7 @@ export default function Profile (){
                       />
                       <div className="member-name">
                         <label>Maria Cotton</label>
-                        <span>
-                          <a
-                            href="/cdn-cgi/l/email-protection"
-                            className="__cf_email__"
-                            data-cfemail="056864776c64666a71716a6b45607d64687569602b666a68"
-                          >
-                            [email&nbsp;protected]
-                          </a>
-                        </span>
+                        
                       </div>
                     </div>
                     <div className="member-btn">

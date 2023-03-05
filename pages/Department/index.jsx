@@ -1,14 +1,15 @@
 
-import Header from './../../components/Header';
-import Sidebar from './../../components/Sidebar';
+import React from "react";
 import Searchbar from './../../components/Searchbar';
 import * as Icon from 'react-feather';
+import { Button, Card, Collapse } from "reactstrap";
+
 
 export default function Department (){
+  const [collapseOpen, setCollapseOpen] = React.useState(false);
     return (
         <div>
-        <Header/>
-        <Sidebar/>
+      
         <>
   <div className="page-wrapper">
     <div className="content container-fluid">
@@ -46,12 +47,13 @@ export default function Department (){
           <div className="col-xl-10 col-sm-8 col-12">
             <label className="employee_count">7 Departments</label>
           </div>
-          <div class="col-xl-1 col-sm-2 col-12 ">
-<a href="#" class="btn-create "><Icon.Plus /> </a>
+          <div className="col-xl-1 col-sm-2 col-12 ">
+<a href="#" className="btn-create "><Icon.Plus /> </a>
 </div>
         </div>
       </div>
       </div>
+      
       
       
       <div className="row">
@@ -121,11 +123,16 @@ export default function Department (){
                     role="button"
                     aria-expanded="false"
                     aria-controls="table"
+                    onClick={() => {
+                      setCollapseOpen(!collapseOpen);
+                    }}
                   >
-                    <Icon.ChevronDown />
+                    <Icon.ChevronUp />
+                    
                   </a>
                 </div>
               </div>
+              <Collapse isOpen={collapseOpen}>
               <div className="table-responsive collapse show" id="table">
                 <table className="table  custom-table  no-footer">
                   <thead>
@@ -374,6 +381,7 @@ export default function Department (){
                   </tbody>
                 </table>
               </div>
+              </Collapse>
             </div>
           </div>
         </div>

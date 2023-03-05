@@ -1,6 +1,4 @@
 
-import Header from './../../components/Header';
-import Sidebar from './../../components/Sidebar';
 import * as Icon from 'react-feather';
 
 
@@ -9,8 +7,7 @@ import * as Icon from 'react-feather';
 export default function ProfileSetting (){
     return (
         <div>
-      <Header/>
-        <Sidebar/>
+     
         <div className="page-wrapper">
   <div className="content container-fluid">
     <div className="row">
@@ -46,6 +43,9 @@ export default function ProfileSetting (){
                 Settings
               </a>
             </li>
+            <li>
+                <a href="ProfileTimeoff">TimeOff</a>
+              </li>
           </ul>
         </div>
       </div>

@@ -11,7 +11,7 @@ function Header(){
         <a href="/" className="logo logo-small">
           <img src="assets/logo-small.png" alt="Logo" width={30} height={30} />
         </a>
-        <a href="javascript:void(0);" id="toggle_btn">
+        <a href="#" id="toggle_btn">
           <span className="bar-icon">
             <span />
             <span />

@@ -29,6 +29,7 @@
     init();
     $('body').append('<div class="sidebar-overlay"></div>');
     $(document).on('click', '#mobile_btn', function() {
+        
         $wrapper.toggleClass('slide-nav');
         $('.sidebar-overlay').toggleClass('opened');
         $('html').addClass('menu-opened');

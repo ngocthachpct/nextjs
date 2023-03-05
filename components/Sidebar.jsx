@@ -12,11 +12,11 @@ function Sidebar (){
           <div className="sidebar-inner slimscroll">
             <div className="sidebar-contents">
               <div id="sidebar-menu" className="sidebar-menu">
-                <div className="mobile-show">
+                {/* <div className="mobile-show">
                   <div className="offcanvas-menu">
                     <div className="user-info align-center bg-theme text-center">
                       <span className="lnr lnr-cross  text-white" id="mobile_btn_close">X</span>
-                      <a href="javascript:void(0)" className="d-block menu-style text-white">
+                      <a href="#" className="d-block menu-style text-white">
                         <div className="user-avatar d-inline-block mr-3">
                           <img src="assets/avatar-18.jpg" alt="user avatar" className="rounded-circle" width={50} />
                         </div>
@@ -31,7 +31,7 @@ function Sidebar (){
                       </form>
                     </div>
                   </div>
-                </div>
+                </div> */}
                 <ul>
                   <li className={router.pathname.split("?")[0].toLowerCase() == "/dashboard" ? "active" : "" }>
                     <a href="Dashboard"><img src="assets/home.svg" alt="sidebar_img" />
