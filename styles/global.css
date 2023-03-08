@@ -287,6 +287,7 @@ p:last-child {
 .table td,
 .table th {
 	padding: 15px 10px;
+	text-align: center;
 }
 
 table.table td h2 {
@@ -447,6 +448,7 @@ a.action_label3 {
 	border-radius: 5px;
 }
 
+
 a.action_label4 {
 	font-size: 12px;
 	color: #DC3545;
@@ -549,8 +551,12 @@ a.action_label4 svg {
 	border: 1px solid #1665D8;
 	color: #1665D8;
 	font-size: 12px;
-	padding: 10px 25px;
+	padding: 10px ;
 	border-radius: 5px;
+	width: 220px;
+	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .activity-img img {
@@ -564,8 +570,10 @@ a.action_label4 svg {
 	font-size: 12px;
 	padding: 10px;
 	border-radius: 5px;
-	width: 110px;
+	width: 200px;
 	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .table tr td label.action_label.in_active {
@@ -1485,7 +1493,14 @@ button.bg-danger:hover {
 /*-----------------
 	6. Select2
 -----------------------*/
-
+.select {
+	font-size: 12px;
+	color: #00882E;
+	border: 2px solid #00882E;
+	padding: 13px 15px;
+	border-radius: 5px;
+	width: 100px;
+}
 .select2-container .select2-selection--single {
 	border: 1px solid #ddd;
 	height: 40px;
@@ -1553,6 +1568,7 @@ button.bg-danger:hover {
 	font-size: 15px;
 	font-weight: 600;
 	line-height: 38px;
+	
 }
 
 .tab-select .select2-container--default .select2-selection--single .select2-selection__arrow b {
@@ -1565,7 +1581,7 @@ button.bg-danger:hover {
 	position: absolute;
 	top: 10px;
 	width: 25px;
-	background: url(/assets/right-arrow.png) no-repeat 0 0 / 14px 7px;
+	background: url(/right-arrow.png) no-repeat 0 0 / 14px 7px;
 	height: 15px;
 }
 
@@ -1579,7 +1595,7 @@ button.bg-danger:hover {
 	position: absolute;
 	top: 10px;
 	width: 25px;
-	background: url(/assets/down-arrow-green.png) no-repeat 0 0 / 14px 7px;
+	background: url(/down-arrow-green.png) no-repeat 0 0 / 14px 7px;
 	height: 15px;
 }
 
@@ -1657,7 +1673,7 @@ button.bg-danger:hover {
 	position: absolute;
 	top: 10px;
 	width: 25px;
-	background: url(/assets/arrow-down-orange.png) no-repeat 0 0 / 14px 7px;
+	background: url(/arrow-down-orange.png) no-repeat 0 0 / 14px 7px;
 	height: 15px;
 }
 
@@ -1671,7 +1687,7 @@ button.bg-danger:hover {
 	position: absolute;
 	top: 10px;
 	width: 25px;
-	background: url(/assets/arrow-down-orange.png) no-repeat 0 0 / 14px 7px;
+	background: url(/arrow-down-orange.png) no-repeat 0 0 / 14px 7px;
 	height: 15px;
 }
 
@@ -1698,7 +1714,7 @@ button.bg-danger:hover {
 	position: absolute;
 	top: 10px;
 	width: 25px;
-	background: url(/assets/dropdown.png) no-repeat 0 0 / 14px 7px;
+	background: url(/dropdown.png) no-repeat 0 0 / 14px 7px;
 	height: 15px;
 }
 
@@ -1712,7 +1728,7 @@ button.bg-danger:hover {
 	position: absolute;
 	top: 10px;
 	width: 25px;
-	background: url(/assets/dropdown.png) no-repeat 0 0 / 14px 7px;
+	background: url(/dropdown.png) no-repeat 0 0 / 14px 7px;
 	height: 15px;
 }
 
@@ -3159,7 +3175,7 @@ html.menu-opened body {
 .top-nav-search {
 	float: left;
 	margin-left: 15px;
-	width: 100%;
+	width: 40%;
 }
 
 .top-nav-search form {
@@ -4825,7 +4841,7 @@ span.leave-inactive {
 }
 
 .dash-activity h3 {
-	background: #F9FAFB url(/assets/headmap.png) no-repeat 100%;
+	background: #F9FAFB url(/headmap.png) no-repeat 100%;
 	padding: 30px 20px;
 	font-size: 18px;
 	font-weight: 600;
@@ -4841,7 +4857,7 @@ span.leave-inactive {
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	align-items: center;
-	background: url(/assets/right-icon.png) no-repeat 96% 50%;
+	background: url(/right-icon.png) no-repeat 96% 50%;
 }
 
 .leave-viewall.activit {
@@ -4853,7 +4869,7 @@ span.leave-inactive {
 }
 
 .activity-set:hover {
-	background: #f5f5f5 url(/assets/right-icon.png) no-repeat 96% 50%;
+	background: #f5f5f5 url(/right-icon.png) no-repeat 96% 50%;
 }
 
 .activity-content {
@@ -6542,6 +6558,18 @@ a.btn-add {
 	border: 1px solid #00882E;
 }
 
+.btn-search {
+	background: #000;
+	color: #fff;
+	padding: 15px 45px;
+	font-size: 20px;
+	border-radius: 10px;
+	font-weight: 600;
+	transition: all 0.5s;
+	border: 1px solid #00882E;
+}
+
+
 .card-titles span {
 	color: #000000;
 	display: block;
@@ -7513,7 +7541,7 @@ label.logo-upload {
 	}
 
 	.top-nav-search {
-		display: block;
+		display: none;
 	}
 
 	.login-wrapper .loginbox .login-left {
@@ -7621,10 +7649,10 @@ label.logo-upload {
 		margin-bottom: 15px;
 	}
 
-	a.btn-create,
+	/* a.btn-create,
 	a.btn-cancel {
 		padding: 10px 0;
-	}
+	} */
 
 	.member-head>h2 {
 		margin-bottom: 25px;
@@ -7803,11 +7831,11 @@ label.logo-upload {
 		padding-left: 30px;
 	}
 
-	label.employee_count,
+	/* label.employee_count,
 	a.btn-view,
 	a.btn-view {
 		padding: 10px;
-	}
+	} */
 
 	.slimScrollDiv {
 		height: 100% !important;

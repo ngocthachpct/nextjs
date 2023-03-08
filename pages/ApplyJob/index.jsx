@@ -32,16 +32,19 @@ export default function ApplyJob() {
                         <span />
                         <label>Phone Number</label>
                     </div>
+                    <div className={style.txt_field}>
+                        <input type="text" required />
+                        <span />
+                        <label>Apply Position</label>
+                    </div>
                     <p>Upload CV</p>
                     <input type="file" id="myFile" name="filename"></input>
                     <input className={style.Login} type="submit" value="Submit" />
 
                     <div className={style.signup_link}>
-                        <a href="Login">Back to homepage</a>
+                        <a href="/">Back to homepage</a>
                     </div>
-                    {/* <div className={style.signup_link}>
-                        <a href="index.html">Back</a>
-                    </div> */}
+                    
                 </form>
             </div>
         </div>

@@ -1,13 +1,10 @@
 
-import Header from './../../components/Header';
-import Sidebar from './../../components/Sidebar';
 import * as Icon from 'react-feather';
 
 export default function ProfileEmployment (){
     return (
         <div>
-        <Header/>
-        <Sidebar/>
+      
         <>
   <div className="page-wrapper">
     <div className="content container-fluid">
@@ -18,7 +15,7 @@ export default function ProfileEmployment (){
               <li className="breadcrumb-item">
                 <a href="index.html">
                   <img
-                    src="assets/dash.png"
+                    src="/dash.png"
                     className="mr-2"
                     alt="breadcrumb"
                   />
@@ -35,7 +32,7 @@ export default function ProfileEmployment (){
             <ul>
               <li>
                 <a className="active" href="#">
-                  Employment
+                  Employement
                 </a>
               </li>
               <li>
@@ -45,16 +42,13 @@ export default function ProfileEmployment (){
               <li>
                 <a href="ProfileSetting">Settings</a>
               </li>
-              <li>
-                <a href="ProfileTimeoff">TimeOff</a>
-              </li>
             </ul>
           </div>
         </div>
         <div className="col-xl-12 col-sm-12 col-12 ">
           <div className="row">
             <div className="col-xl-6 col-sm-12 col-12 d-flex">
-              {/* <div className="card flex-fill">
+              <div className="card flex-fill">
                 <div className="card-header">
                   <h2 className="card-titles">
                     Add Maria Cotton to Another Team
@@ -74,7 +68,7 @@ export default function ProfileEmployment (){
                     </a>
                   </div>
                 </div>
-              </div> */}
+              </div>
             </div>
             <div className="col-xl-6 col-sm-12 col-12 d-flex">
               <div className="card card-lists flex-fill">
@@ -104,7 +98,7 @@ export default function ProfileEmployment (){
                 <div className="card-body d-flex align-items-center">
                   <div className="member-img">
                     <img
-                      src="assets/avatar-14.jpg"
+                      src="/avatar-14.jpg"
                       alt="profile"
                       className="mr-3"
                     />
@@ -137,42 +131,42 @@ export default function ProfileEmployment (){
                     <img
                       className="avatar-img rounded-circle"
                       alt="User Image"
-                      src="assets/avatar-10.jpg"
+                      src="/avatar-10.jpg"
                     />
                   </div>
                   <div className="avatar avatar-xs group_img group_header">
                     <img
                       className="avatar-img rounded-circle"
                       alt="User Image"
-                      src="assets/avatar-15.jpg"
+                      src="/avatar-15.jpg"
                     />
                   </div>
                   <div className="avatar avatar-xs group_img group_header">
                     <img
                       className="avatar-img rounded-circle"
                       alt="User Image"
-                      src="assets/avatar-16.jpg"
+                      src="/avatar-16.jpg"
                     />
                   </div>
                   <div className="avatar avatar-xs group_img group_header">
                     <img
                       className="avatar-img rounded-circle"
                       alt="User Image"
-                      src="assets/avatar-17.jpg"
+                      src="/avatar-17.jpg"
                     />
                   </div>
                   <div className="avatar avatar-xs group_img group_header">
                     <img
                       className="avatar-img rounded-circle"
                       alt="User Image"
-                      src="assets/avatar-14.jpg"
+                      src="/avatar-14.jpg"
                     />
                   </div>
                   <div className="avatar avatar-xs group_img group_header">
                     <img
                       className="avatar-img rounded-circle"
                       alt="User Image"
-                      src="assets/avatar-18.jpg"
+                      src="/avatar-18.jpg"
                     />
                   </div>
                 </div>
@@ -214,7 +208,7 @@ export default function ProfileEmployment (){
                   <div className="member-formcontent  border-0 ">
                     <div className="member-imgs">
                       <img
-                        src="assets/avatar-14.jpg"
+                        src="/avatar-14.jpg"
                         alt="profile"
                       />
                       <div className="member-name">
@@ -256,21 +250,21 @@ export default function ProfileEmployment (){
                         <img
                           className="avatar-img rounded-circle"
                           alt="User Image"
-                          src="assets/avatar-14.jpg"
+                          src="/avatar-14.jpg"
                         />
                       </div>
                       <div className="avatar avatar-xs group_img group_header">
                         <img
                           className="avatar-img rounded-circle"
                           alt="User Image"
-                          src="assets/avatar-10.jpg"
+                          src="/avatar-10.jpg"
                         />
                       </div>
                       <div className="avatar avatar-xs group_img group_header">
                         <img
                           className="avatar-img rounded-circle"
                           alt="User Image"
-                          src="assets/avatar-15.jpg"
+                          src="/avatar-15.jpg"
                         />
                       </div>
                     </div>

@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 
 
-export default function Employee({ employees, departmentName }) {
+export default function DepartmentDetail({ employees, departmentName }) {
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage, setItemsPerPage] = useState(5);
     const indexOfLastItem = currentPage * itemsPerPage;
@@ -21,26 +21,17 @@ export default function Employee({ employees, departmentName }) {
                 <div className="page-wrapper">
                     <div className="content container-fluid">
                         <div className="row">
-                            <div className="col-xl-12 col-sm-12 col-12">
-                                <div className="breadcrumb-path mb-4">
-                                    <ul className="breadcrumb">
-                                        <li className="breadcrumb-item"><a href="/dashboard"><img src="/dash.png" className="mr-2" alt="breadcrumb" />Home</a>
-                                        </li>
-                                        <li className="breadcrumb-item active"> Employees</li>
-                                    </ul>
-                                    <h3>Employees</h3>
-                                </div>
-                            </div>
+                            <h1 className="mb-4">All Departments</h1>
                             {/* <div className="col-xl-12 col-sm-12 col-12 mb-4">
                                 <div className="head-link-set">
                                     <a className="btn-add" href="/add-employee"><Icon.Plus /> Add Person</a>
                                 </div>
                             </div> */}
-                            <div className="col-xl-12 col-sm-12 col-12 mb-4"><EmployeeFilter items={departmentName} /></div>
+                            {/* <div className="col-xl-12 col-sm-12 col-12 mb-4"><EmployeeFilter items={departmentName} /></div> */}
                              <div className="col-xl-12 col-sm-12 col-12 mb-4 ">
         <div className="row">
           <div className="col-xl-10 col-sm-10 col-12">
-            <label className="employee_count">{currentItems.length} People</label>
+            <label className="employee_count">150 Departments</label>
           </div>
           <div className="col-xl-2 col-sm-2 col-12 ">
 <a href="#" className="btn-create "><Icon.Plus />Add</a>
@@ -52,17 +43,17 @@ export default function Employee({ employees, departmentName }) {
                             <div className="col-xl-12 col-sm-12 col-12 mb-4">
                                 <div className="card">
                                     <div className="table-heading">
-                                        <h2>Employees</h2>
+                                        <h2>Departments</h2>
                                     </div>
                                     <div className="table-responsive">
                                         <table className="table  custom-table no-footer">
                                             <thead>
                                                 <tr>
-                                                    <th>Name</th>
+                                                    <th>Department Name</th>
                                                     <th>Line Manager</th>
-                                                    <th>Department</th>
-                                                    <th>Job</th>
-                                                    <th>Office</th>
+                                                    <th>Address</th>
+                                                    <th>Region</th>
+                                                    <th>Country</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>

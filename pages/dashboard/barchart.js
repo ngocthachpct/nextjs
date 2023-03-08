@@ -104,8 +104,10 @@ window.myBar = new Chart(ctx, config);
   }, []);
 
   return (
-    <div style={{ width: '550px', height: '400px' }}>
+    <div className="row">
+    <div style={{ height: '400px' }}>
       <canvas id="bar-chart" />
+    </div>
     </div>
   );
 }

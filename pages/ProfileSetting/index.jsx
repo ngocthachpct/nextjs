@@ -1,55 +1,20 @@
 
-import * as Icon from 'react-feather';
 
+import * as Icon from 'react-feather';
+import ProfileNav from '../../components/ProfileNav';
 
 
 
 export default function ProfileSetting (){
     return (
         <div>
-     
+      
         <div className="page-wrapper">
   <div className="content container-fluid">
     <div className="row">
-      <div className="col-xl-12 col-sm-12 col-12 ">
-        <div className="breadcrumb-path mb-4">
-          <ul className="breadcrumb">
-            <li className="breadcrumb-item">
-              <a href="index.html">
-                <img
-                  src="assets/dash.png"
-                  className="mr-2"
-                  alt="breadcrumb"
-                />
-                Home
-              </a>
-            </li>
-            <li className="breadcrumb-item active"> Profile</li>
-          </ul>
-          <h3>Profile </h3>
-        </div>
-      </div>
-      <div className="col-xl-12 col-sm-12 col-12 mb-4">
-        <div className="head-link-set">
-          <ul>
-            <li>
-              <a href="Profile">Employement</a>
-            </li>
-            <li>
-              <a href="ProfileDetail">Detail</a>
-            </li>
-            <li>
-              <a className="active" href="#">
-                Settings
-              </a>
-            </li>
-            <li>
-                <a href="ProfileTimeoff">TimeOff</a>
-              </li>
-          </ul>
-        </div>
-      </div>
-      <div className="col-xl-12 col-sm-12 col-12 mb-4">
+    <ProfileNav></ProfileNav>
+      
+    <div className="col-xl-12 col-sm-12 col-12 mb-4">
         <div className="row">
           <div className="col-xl-6 col-sm-12 col-12 d-flex">
             <div className="card flex-fill">
@@ -83,12 +48,15 @@ export default function ProfileSetting (){
                 <h2 className="card-titles">
                   Change Profile Image
                   <span>
-                    Upload your image!
+                    Update your image!
                   </span>
                 </h2>
               </div>
               <div className="card-body">
               <p>Upload Profile Image</p>
+              <div>
+                  <img src = "/avatar-02.jpg"></img>
+                  </div>
                     <input type="file" id="myFile" name="filename"></input>
                     
                 <div className="btn-set pl-0">
@@ -100,9 +68,11 @@ export default function ProfileSetting (){
         </div>
       </div>
       
+      
     </div>
   </div>
 </div>
+
 
         </div>
     );

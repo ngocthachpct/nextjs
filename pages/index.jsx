@@ -36,7 +36,7 @@ export default function Login() {
     return (
         <div className={style.container}>
             <div className={style.center}>
-                <h1>High Tech Company</h1>
+                <h1>NextJS Company</h1>
                 <form onSubmit={submitHandler}>
                     <div className={style.txt_field}>
                         <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} required />
@@ -48,10 +48,11 @@ export default function Login() {
                         <span />
                         <label>Password</label>
                     </div>
+                    <div className={style.pass}>Forgot Password?</div>
                     <input className={style.Login} type="submit" value="Login" />
                     <div className={style.error}>{error}</div>
                     <div className={style.signup_link}>
-                        Join us now! <a href="ApplyJob">Apply</a>
+                        Join us now! <a href="applyJob">Apply here</a>
                     </div>
                 </form>
             </div>

@@ -12,13 +12,13 @@ function Sidebar (){
           <div className="sidebar-inner slimscroll">
             <div className="sidebar-contents">
               <div id="sidebar-menu" className="sidebar-menu">
-                {/* <div className="mobile-show">
+                <div className="mobile-show">
                   <div className="offcanvas-menu">
                     <div className="user-info align-center bg-theme text-center">
                       <span className="lnr lnr-cross  text-white" id="mobile_btn_close">X</span>
                       <a href="#" className="d-block menu-style text-white">
                         <div className="user-avatar d-inline-block mr-3">
-                          <img src="assets/avatar-18.jpg" alt="user avatar" className="rounded-circle" width={50} />
+                          <img src="/avatar-18.jpg" alt="user avatar" className="rounded-circle" width={50} />
                         </div>
                       </a>
                     </div>
@@ -31,33 +31,33 @@ function Sidebar (){
                       </form>
                     </div>
                   </div>
-                </div> */}
+                </div>
                 <ul>
                   <li className={router.pathname.split("?")[0].toLowerCase() == "/dashboard" ? "active" : "" }>
-                    <a href="Dashboard"><img src="assets/home.svg" alt="sidebar_img" />
+                    <a href="/dashboard"><img src="/home.svg" alt="sidebar_img" />
                       <span>Dashboard</span></a>
                   </li>
                   <li className={router.pathname.split("?")[0].toLowerCase() == "/employee" ? "active" : "" }>
-                    <a href="Employee"><img src="assets/employee.svg" alt="sidebar_img" /><span>
+                    <a href="/employee"><img src="/employee.svg" alt="sidebar_img" /><span>
                         Employees</span></a>
                   </li>
-                  <li className={router.pathname.split("?")[0].toLowerCase() == "/company" ? "active" : "" }>
-                    <a href="Company"><img src="assets/leave.svg" alt="sidebar_img" /> <span>
-                        Companies</span></a>
+                  <li className={router.pathname.split("?")[0].toLowerCase() == "/branch" ? "active" : "" }>
+                    <a href="branch"><img src="/leave.svg" alt="sidebar_img" /> <span>
+                        Branches</span></a>
                   </li>
                   <li className={router.pathname.split("?")[0].toLowerCase() == "/department" ? "active" : "" }>
-                    <a href="Department"><img src="assets/company.svg" alt="sidebar_img" /> <span>
+                    <a href="/department"><img src="/company.svg" alt="sidebar_img" /> <span>
                         Departments</span></a>
                   </li>
                   
-                  <li className={router.pathname.split("?")[0].toLowerCase() == "/profile" ? "active" : "" }>
-                    <a href="Profile"><img src="assets/profile.svg" alt="sidebar_img" />
+                  <li className={router.pathname.split("?")[0].toLowerCase().includes("profile") ? "active" : "" }>
+                    <a href="/profile"><img src="/profile.svg" alt="sidebar_img" />
                       <span>Profile</span></a>
                   </li>
                 </ul>
                 <ul className="logout">
                   <li>
-                    <a href="/"><img src="assets/logout.svg" alt="sidebar_img" /><span>Log
+                    <a href="/"><img src="/logout.svg" alt="sidebar_img" /><span>Log
                         out</span></a>
                   </li>
                 </ul>
