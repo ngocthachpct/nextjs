@@ -1,13 +1,28 @@
+import React from 'react';
 import '@/styles/global.css'
+import '@/styles/loading.css'
 import type { AppProps } from 'next/app'
+import { DataProvider } from './../store/GlobalState'
 import Layout from './../components/Layout';
+import Notify from './../components/Notify';
 
 export default function App({ Component, pageProps, ...appProps }: AppProps) {
-  if ([`/`, `/applyJob`].includes(appProps.router.pathname))
-      return <Component {...pageProps} />;
+  if ([`/`, `/applyJob`, `/login`, `/register`, `/forgot`].includes(appProps.router.pathname))
   return (
-    <Layout>
-  <Component {...pageProps} />
-  </Layout>
+    <DataProvider>
+      <Notify />
+      
+        <Component {...pageProps} />
+      
+    </DataProvider>
+  );
+  return (
+    <DataProvider>
+      <Layout>
+        <Notify/>
+        <Component {...pageProps} />
+      </Layout>
+    </DataProvider>
   )
 }
+

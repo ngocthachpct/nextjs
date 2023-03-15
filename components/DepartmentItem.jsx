@@ -1,11 +1,12 @@
 import Link from "next/link"
 import * as Icon from 'react-feather';
 
-export default function DepartmentItem({ department }) {
+export default function DepartmentItem({ department}) {
     return(
         <div className="col-xl-4">
                 <div className="card">
                   <div className="card-header">
+                  <Link href={`departmentDetail/${department.department_id}`}>
                     <div className="employee-head">
                       <h2>{department.department_name}</h2>
                       {/* <ul>
@@ -28,7 +29,9 @@ export default function DepartmentItem({ department }) {
                           </a>
                         </li>
                       </ul> */}
+                      <Icon.Edit />
                     </div>
+                    </Link>
                   </div>
                   <div className="card-body">
                     <div className="employee-content">

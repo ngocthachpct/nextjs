@@ -5,7 +5,8 @@ import filterSearch from '../utils/filterSearch ';
 
 
 export default function EmployeeFilter({ items }) {
-  const department_name = items.map(department => department.department_name)
+  const departmentName = items?.map(department => ({ department_id: department?.department_id, department_name: department?.department_name })) || []
+
 
   const [name, setName] = useState('')
   const [department, setDepartment] = useState('')
@@ -34,10 +35,10 @@ export default function EmployeeFilter({ items }) {
         <div className="form-group col-md-4">
           <label htmlFor="inputDepartment">Department</label>
           <select id="inputDepartment" className="form-control" name="department" value={department} onChange={handleDepartment}>
-            <option select>All</option>
-            {department_name.map((department) => (
-              <option key={department} value={department}>
-                {department}
+            <option>All</option>
+            {departmentName.map((department) => (
+              <option key={department.department_id} value={department.department_name}>
+                {department.department_name}
               </option>
             ))}
           </select>

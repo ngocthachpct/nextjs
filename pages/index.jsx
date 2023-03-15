@@ -1,61 +1,109 @@
 import { useRouter } from 'next/router';
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import style from './index.module.css'
+import { setCookie } from 'cookies-next';
+import { validLogin } from './../utils/valid';
+import { DataContext } from './../store/GlobalState';
 
 export default function Login() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
-    const router = useRouter();
 
-    const submitHandler = async (e) => {
-        e.preventDefault();try{
+  const initialState = { email: '', password: '' }
+  const [userData, setUserData] = useState(initialState)
+  const { email, password } = userData
+  const { state, dispatch } = useContext(DataContext)
+  const { auth } = state
+
+  const router = useRouter()
+
+  const forgotPassword = () =>{
+      alert('Please check your email')
+  }
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setUserData({
+      ...userData,
+      [name]: value
+    });
+    dispatch({ type: 'NOTIFY', payload: {} })
+    //console.log(value);
+  }
+
+  const handleSubmit = async e => {
+    e.preventDefault()
+    const errMsg = validLogin(email, password)
+    if (errMsg) return dispatch({ type: 'NOTIFY', payload: { error: errMsg } })
+
+    dispatch({ type: 'NOTIFY', payload: { loading: true } })
+
+    const sleep = (ms) => {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    (async () => {
+
+      await sleep(3000)
+      try {
         const response = await fetch('http://localhost:3001/auth/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email, password })
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(userData)
         });
-        //const data = await response.json();
-        //console.log(data); // In kết quả trả về từ API ra console để kiểm tra
+        const data = await response.json();
+
+        //console.log(`token: ${data.token}`); // In kết quả trả về từ API ra console để kiểm tra
         // Do something with the data here
         if (response.ok) {
-            const data = await response.json();
-            localStorage.setItem('token',data.token);
-            router.push('/dashboard');
-          }else {
-            // Set an error message if the login was unsuccessful
-            setError('Invalid username or password');
+          setCookie('id', data.user.id)
+          setCookie('token', data.token);
+
+          (async () => {
+            var userInfo = { 'email': data.user.email, 'id': data.user.id };
+            localStorage.setItem('userInfo', JSON.stringify(userInfo))
+            await sleep(2000)
+            dispatch({ type: 'NOTIFY', payload: { isHidden: 'hidden' } })
+            router.push('/dashboard')
+          })()
+
+
+        } else {
+          return dispatch({ type: 'NOTIFY', payload: { error: data.err } })
+
         }
-    } catch (error) {
+      } catch (error) {
         console.error(error);
-        setError('Invalid username or password');
-    }
-    };
-    return (
-        <div className={style.container}>
-            <div className={style.center}>
-                <h1>NextJS Company</h1>
-                <form onSubmit={submitHandler}>
-                    <div className={style.txt_field}>
-                        <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                        <span />
-                        <label>Username</label>
-                    </div>
-                    <div className={style.txt_field}>
-                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-                        <span />
-                        <label>Password</label>
-                    </div>
-                    <div className={style.pass}>Forgot Password?</div>
-                    <input className={style.Login} type="submit" value="Login" />
-                    <div className={style.error}>{error}</div>
-                    <div className={style.signup_link}>
-                        Join us now! <a href="applyJob">Apply here</a>
-                    </div>
-                </form>
-            </div>
-        </div>
-    );
+
+      }
+    })()
+
+  }
+
+  return (
+    <div className={style.container}>
+      <div className={style.center}>
+        <h1>High Tech Company</h1>
+        <form onSubmit={handleSubmit}>
+          <div className={style.txt_field}>
+            <input type="text" name="email" onChange={handleInputChange} value={userData.email} required />
+            <span />
+            <label>Email</label>
+          </div>
+          <div className={style.txt_field}>
+            <input type="password" name="password" onChange={handleInputChange} value={userData.password} required />
+            <span />
+            <label>Password</label>
+          </div>
+          <div className="col-6 text-right mb-3">
+<a className="forgot-link" onClick={forgotPassword} href="#">Forgot Password ?</a>
+</div>
+<div className="text-center dont-have mb-2">Don't have an account yet? <a href="/register">Register</a></div>
+          <input className={style.Login} type="submit" value="Login" />
+          <div className={style.signup_link}>
+            Join us now! <a href="ApplyJob">Apply</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 }

@@ -1,14 +1,16 @@
 import Link from "next/link"
 
-export default function EmployeeItem({ employee }) {
+export default function EmployeeItem({ employee, handleCheck }) {
+
+
     return (
-      
+
         <tr>
             <td>
                 <Link href={`profileDetail/${employee.employee_id}`}>
-                <div className="table-img">
-                    <label>{employee.first_name} {employee.last_name}</label>
-                </div>
+                    <div className="table-img">
+                        <label>{employee.first_name} {employee.last_name}</label>
+                    </div>
                 </Link>
             </td>
             <td>
@@ -19,14 +21,13 @@ export default function EmployeeItem({ employee }) {
             </td>
             <td><label className="action_label">{employee.job} </label></td>
             <td><label className="action_label2">{employee.office}</label></td>
-            <td className="tab-select">
-                <select className="select">
-                    <option value="default">default</option>
-                    <option value="delete">delete</option>
-                    <option value="update">update</option>
-                </select>
+            <td>
+                <input type="checkbox" checked={employee.checked}
+                   
+                    style={{ height: '20px', width: '20px' }}
+                    onChange={() => handleCheck(employee.employee_id)} />
             </td>
         </tr>
-   
+
     )
 }

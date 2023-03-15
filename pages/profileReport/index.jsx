@@ -1,33 +1,67 @@
 
-import * as Icon from 'react-feather';
 import ProfileNav from '../../components/ProfileNav';
+import cookie from 'cookie';
+import { getData } from '../../utils/fetchData';
 
+export default function ProfileReport({ attendances }) {
+  function formatDate(dateString) {
+    const date = new Date(dateString);
+    const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1)
+      .toString()
+      .padStart(2, "0")}-${date.getDate().toString().padStart(2, "0")}`;
+    return formattedDate;
+  }
 
+  function formatTime(timeString) {
+    const date = new Date(timeString);
+    const formattedTime = `${date.getUTCHours().toString().padStart(2, "0")}:${date.getUTCMinutes().toString().padStart(2, "0")}:${date.getUTCSeconds().toString().padStart(2, "0")}`;
+    return formattedTime;
+  }
 
-export default function ProfileReport (){
-    return (
-        <div>
-   
-   <div className="page-wrapper">
-  <div className="content container-fluid">
-    <div className="row">
-      
-    <ProfileNav></ProfileNav>
-      <div className="col-xl-12 col-sm-12 col-12 mb-4">
-        <div className="row">
-          <div className="col-xl-12 col-sm-12 col-12">
-            <div className="card flex-fill">
-              <div className="card-header">
-                <h2 className="card-titles">Attendance Report</h2>
-              </div>
-              <div className="card-body">
-                <div className="col-xl-12 col-sm-12 col-12 mb-5 ">
-                  <div className="row">
-                    
-                    <div className="col-xl-10 col-sm-12 col-12 p-0">
-                      <div className="head-link-set">
-                      
-                        {/* <ul>
+  function formatLateTime(timeString) {
+    const date = new Date(timeString);
+    const totalHours = date.getUTCHours() + (date.getUTCMinutes() / 60) + (date.getUTCSeconds() / 3600);
+    const roundedTotalHours = parseFloat(totalHours.toFixed(2));
+    return roundedTotalHours;
+  }
+
+  let totalLateTime = 0;
+
+  attendances.forEach(item => {
+    const lateTimeInMilliseconds = Date.parse(item.late_time);
+    totalLateTime += lateTimeInMilliseconds;
+  });
+
+  // total late
+  const seconds = Math.floor(totalLateTime / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+
+  const total = `${hours} hours, ${minutes % 60} minutes, ${seconds % 60} seconds`;
+
+  return (
+    <div>
+
+      <div className="page-wrapper">
+        <div className="content container-fluid">
+          <div className="row">
+
+            <ProfileNav></ProfileNav>
+            <div className="col-xl-12 col-sm-12 col-12 mb-4">
+              <div className="row">
+                <div className="col-xl-12 col-sm-12 col-12">
+                  <div className="card flex-fill">
+                    <div className="card-header">
+                      <h2 className="card-titles">Attendance Report</h2>
+                    </div>
+                    <div className="card-body">
+                      <div className="col-xl-12 col-sm-12 col-12 mb-5 ">
+                        <div className="row">
+
+                          <div className="col-xl-10 col-sm-12 col-12 p-0">
+                            <div className="head-link-set">
+
+                              {/* <ul>
                           <li>
                             <a className="active" href="#">
                               Total Week
@@ -37,88 +71,55 @@ export default function ProfileReport (){
                             <a href="#">Total Month</a>
                           </li>
                         </ul> */}
-                        <span>You have been late for 55 minutes in total this week.</span>
-                      </div>
-                    </div>
-                    
-                    {/* <div className="col-xl-4 col-sm-12 col-12 p-0 select-path">
+                              <span>You have been late for {total} in total this week.</span>
+                            </div>
+                          </div>
+
+                          {/* <div className="col-xl-4 col-sm-12 col-12 p-0 select-path">
                       <select className="select">
                         <option value="inactive">In Progress</option>
                         <option value="active">Completed</option>
                       </select>
                     </div> */}
+                        </div>
+                      </div>
+                      <div className="table table-responsive custimze-table">
+                        <table>
+                          <thead>
+                            <tr>
+
+                              <th>Date</th>
+                              <th>Arrived</th>
+                              <th>Leaved</th>
+                              <th>Late Time</th>
+
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {attendances.map((attendance) => (
+                              <tr>
+
+                                <td>
+                                  <span />{formatDate(attendance.date)}
+                                </td>
+                                <td>
+                                  <span />{formatTime(attendance.arrived_time)}
+                                </td>
+                                <td>
+                                  <span />{formatTime(attendance.leave_time)}
+                                </td>
+                                <td>
+                                  <span />{formatLateTime(attendance.late_time)}
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="table table-responsive custimze-table">
-                  <table>
-                    <thead>
-                      <tr>
-                        
-                        <th>Date</th>
-                        <th>Arrived</th>
-                        <th>Leaved</th>
-                        <th>Late Time</th>
-
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        
-                        <td>Mon, 26 Aug 2019</td>
-                        <td>8:00AM (on time)</td>
-                        <td>5:00PM</td>
-                        <td>10 Minutes</td>
-                      </tr>
-                      <tr>
-                  
-                        <td>Wed, 25 Dec 2019</td>
-                        <td> 9:00AM (late)</td>
-                        <td>5:00PM</td>
-                        <td>10 Minutes</td>
-                      </tr>
-                      <tr>
-                       
-                        <td>Thu, 26 Dec 2019</td>
-                        <td>8:00AM (on time)</td>
-                        <td>5:00PM</td>
-                        <td>10 Minutes</td>
-                      </tr>
-                      <tr>
-                       
-                        <td>Wed, 1 Jan 2020</td>
-                        <td>10:00AM (late)</td>
-                        <td>5:00PM</td>
-                        <td>10 Minutes</td>
-                      </tr>
-                      <tr>
-                     
-                        <td>Mon, 1 Jan 2020</td>
-                        <td> 8:00AM (on time)</td>
-                        <td>5:00PM</td>
-                        <td>10 Minutes</td>
-                      </tr>
-                      <tr>
-                        
-                        <td>Fri, 17 Jan 2020 </td>
-                        <td> 8:00AM (on time)</td>
-                        <td>5:00PM</td>
-                        <td>10 Minutes</td>
-                      </tr>
-                      <tr>
-                        
-                        <td>Mon, 9 Mar 2020</td>
-                        <td>8:11AM (late)</td>
-                        <td>5:00PM</td>
-                        <td>10 Minutes</td>
-                      </tr>
-                      
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* <div className="col-xl-6 col-sm-12 col-12 d-flex">
+                {/* <div className="col-xl-6 col-sm-12 col-12 d-flex">
             <div className="card flex-fill">
               <div className="card-header">
                 <h2 className="card-title">Leave Off Details</h2>
@@ -165,15 +166,27 @@ export default function ProfileReport (){
                 </div>
               </div>
             </div> */}
-          {/* </div> */}
+                {/* </div> */}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+  );
+}
 
+export async function getServerSideProps({ req }) {
+  const cookieHeader = req.headers.cookie;
+  const cookies = cookie.parse(cookieHeader || '');
+  const id = cookies.id;
+  const token = cookies.token;
+  const response = await getData(`attendance/AmountAttendace/${id}`, token)
 
-        </div>
-    );
-
+  console.log(response)
+  return {
+    props: {
+      attendances: response
+    }
+  };
 }

@@ -32,13 +32,13 @@ export default function BranchFilter({ items }) {
   return (
     
 
-    <div className="col-xl-12 col-sm-12 col-12 mb-4">
+    
       <div className="row">
-      <div class="mb-4 text-center">
-  <div class="row align-items-start">
+      <div className="text-center">
+  <div className="row align-items-start">
         <div className="col">
-          <label className="employee_count"><select  className="form-control" value={province} onChange={handleProvince}>
-            <option select>Provinces</option>
+          <label className="employee_count">Provinces<select  className="form-control" value={province} onChange={handleProvince}>
+            <option>All</option>
             {provinces.map((province) => (
               <option key={province} value={province}>
                 {province}
@@ -47,9 +47,9 @@ export default function BranchFilter({ items }) {
           </select></label>
         </div>
         <div className="col">
-          <label className="employee_count">
+          <label className="employee_count">Cities
           <select id="inputDepartment" className="form-control" name="department" value={city} onChange={handleCity}>
-            <option select>Cites</option>
+            <option>All</option>
             {cities.map((city) => (
               <option key={city} value={city}>
                 {city}
@@ -60,15 +60,8 @@ export default function BranchFilter({ items }) {
         </div>
         </div>
         </div>
-        <div className="col-xl-10 col-sm-10 col-12">
-          <label className="employee_count">{items.length} Branches</label>
-        </div>
-        <div class="col-xl-2 col-sm-2 col-12 ">
-          <a href="#" class="btn-create "><Icon.Plus /> Add </a>
-        </div>
-        
       </div>
-    </div>
+    
     /*
     <form>
       <div className="row">

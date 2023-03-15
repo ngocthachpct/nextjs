@@ -1,12 +1,12 @@
 import React from "react";
-import { Bell } from 'react-feather';
 import { Dropdown, Avatar, Text, Grid, User } from "@nextui-org/react";
 function Header() {
+  const userInfor = getLocalInfo()
   return (
 
     <div className="header">
       <div className="header-left">
-        <a href="#" className="logo">
+        <a href="/" className="logo">
           <img src="/logo.png" alt="Logo" />
         </a>
         <a href="#" className="logo logo-small">
@@ -26,7 +26,7 @@ function Header() {
           <button className="btn" type="submit"><i className="fas fa-search" /></button>
         </form>
       </div> */}
-      <a className="mobile_btn" id="mobile_btn">
+      <a onClick = {handleMobile} className="mobile_btn" id="mobile_btn">
         <i className="fas fa-bars" />
       </a>
       <ul className="nav user-menu">
@@ -37,6 +37,7 @@ function Header() {
               <Dropdown placement="bottom-left">
                 <Dropdown.Trigger>
                   <Avatar
+                  id="avatar-header"
                     bordered
                     size="lg"
                     as="button"
@@ -45,26 +46,17 @@ function Header() {
                   />
                 </Dropdown.Trigger>
                 <Dropdown.Menu color="secondary" aria-label="Avatar Actions">
-                  <Dropdown.Item key="profile" css={{ height: "$18" }}>
+                  <Dropdown.Item color="default" css={{ height: "$18" }}>
                     <Text b color="inherit" css={{ d: "flex" }}>
                       Signed in as
                     </Text>
                     <Text b color="inherit" css={{ d: "flex" }}>
-                      zoey@example.com
+                      {userInfor.email}
                     </Text>
                   </Dropdown.Item>
-                  {/* <Dropdown.Item key="settings" withDivider>
-                    My Settings
-                  </Dropdown.Item>
-                  <Dropdown.Item key="team_settings">Team Settings</Dropdown.Item> */}
-                  {/* <Dropdown.Item key="analytics" withDivider>
-                    Check Attendance
-                  </Dropdown.Item>
-                  <Dropdown.Item key="system">Settings</Dropdown.Item> */}
+                
                   <Dropdown.Item href="/profile" key="configurations">Profile</Dropdown.Item>
-                  {/* <Dropdown.Item key="help_and_feedback" withDivider>
-                    Help & Feedback
-                  </Dropdown.Item> */}
+                  
                   <Dropdown.Item key="logout" color="error" withDivider>
                     Log Out
                   </Dropdown.Item>
@@ -77,5 +69,21 @@ function Header() {
     </div>
   );
 }
-
+function handleMobile(){
+  var $wrapper = $('.main-wrapper');
+  $wrapper.toggleClass('slide-nav');
+        $('.sidebar-overlay').toggleClass('opened');
+        $('html').addClass('menu-opened');
+        return false;
+}
 export default Header;
+function getLocalInfo() {
+  if(typeof window !== "undefined") {
+  if(localStorage.getItem("userInfo")) {
+    return JSON.parse(localStorage.getItem('userInfo'))
+  } else{
+  return 'none'
+  }
+}
+return 'none'
+}

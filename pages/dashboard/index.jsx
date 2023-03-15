@@ -1,10 +1,11 @@
 
 import CardBarChart from './barchart';
 import Donutchart from './donutchart';
-
-
+import cookie from 'cookie';
+import { getData } from '../../utils/fetchData';
 
 export default function Dashboard({ templateData }) {
+    console.log(templateData)
     const { currenAmountEmp, amountDepartmentResult, totalSalaryResult, amoutLocationsResult } = templateData;
     
     function getCurrentDate(){
@@ -23,16 +24,16 @@ export default function Dashboard({ templateData }) {
     var today = dayOfWeek + ", " + dayOfMonth + " " + curMonth + " " + curYear;
     return today
 }
+function kFormatter(num) {
+    return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
+}
     
     return (
         <div>
            
             <div className="page-wrapper">
                 <div className="content container-fluid">
-                    <div className="page-name 	mb-4">
-                        <h4 className="m-0"><img src="/profile.jpg" className="mr-1" alt="profile" /> Welcome Joey!</h4>
-                        <label>{getCurrentDate()}</label>
-                    </div>
+                    
                     <div className="row mb-4">
                         <div className="col-xl-12 col-sm-12 col-12">
                             <div className="breadcrumb-path ">
@@ -41,7 +42,7 @@ export default function Dashboard({ templateData }) {
                                     </li>
                                     <li className="breadcrumb-item active">Dashboard</li>
                                 </ul>
-                                <h3>Admin Dashboard</h3>
+                                <h3>Dashboard</h3>
                             </div>
                         </div>
                         {/* <div className="col-xl-6 col-sm-12 col-12">
@@ -88,7 +89,7 @@ export default function Dashboard({ templateData }) {
                                 <div className="card-body">
                                     <div className="card_widget_header">
                                         <label>Salary</label>
-                                        <h4>${totalSalaryResult}</h4>
+                                        <h4>${kFormatter(totalSalaryResult)}</h4>
                                     </div>
                                     <div className="card_widget_img">
                                         <img src="/dash4.png" alt="card-img" />
@@ -141,17 +142,24 @@ export default function Dashboard({ templateData }) {
         </div>
     );
 }
-export async function getServerSideProps() {
-    const response = await fetch('http://localhost:3001/dashboard/template');
-    const data = await response.json();
-  
+export async function getServerSideProps({req}) {
+    const cookieHeader = req.headers.cookie;
+    const cookies = cookie.parse(cookieHeader || '');
+    const token = cookies.token;
+    const response = await getData('dashboard/template', token)
+
+    // Now you can use the `token` value in your `fetch` calls as needed
+    /*const response = await fetch('http://localhost:3001/dashboard/template', {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+    */
+    //const data = await getData(`dashboard/template`, cookie)
+    //const data = await response.json();
     return {
       props: {
-        templateData: {
-        currenAmountEmp: data.currenAmountEmp,
-        totalSalaryResult: data.totalSalaryResult,
-        amountDepartmentResult: data.amountDepartmentResult,
-        amoutLocationsResult: data.amoutLocationsResult,}
-      },
+        templateData: response
+      }
     };
   }

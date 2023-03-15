@@ -5,7 +5,7 @@ export default function LocationItem({ branch }) {
       
         <tr>
             <td>
-                <Link href={`profileDetail/${branch.location_id}`}>
+                <Link href={`#`}>
                 <div className="table-img">
                     <label>{branch.street_address} </label>
                 </div>
@@ -17,13 +17,13 @@ export default function LocationItem({ branch }) {
             <td>
                 <label className="action_label2">{branch.city} </label>
             </td>
-            <td className="tab-select">
+            {/* <td className="tab-select">
                 <select className="select">
                     <option value="default">default</option>
                     <option value="delete">delete</option>
                     <option value="update">update</option>
                 </select>
-            </td>
+            </td> */}
         </tr>
    
     )

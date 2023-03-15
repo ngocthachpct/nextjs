@@ -6,13 +6,19 @@ export default function Donutchart(props) {
     const data = {
         labels: ['Business', 'Testing', 'Development'],
         datasets: [{
-          data: [30, 50, 20],
+          data: [30, 50, 20,30, 50, 20],
           backgroundColor: [
+            '#FF6384',
+            '#36A2EB',
+            '#FFCE56',
             '#FF6384',
             '#36A2EB',
             '#FFCE56'
           ],
           hoverBackgroundColor: [
+            '#FF6384',
+            '#36A2EB',
+            '#FFCE56',
             '#FF6384',
             '#36A2EB',
             '#FFCE56'
